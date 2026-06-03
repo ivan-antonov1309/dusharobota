@@ -1,0 +1,254 @@
+:root {
+    /* Новая цветовая палитра: глубокий космический синий вместо черного */
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --accent-color: #0ea5e9; /* Электрический голубой */
+    --accent-hover: #0284c7;
+    --card-bg: rgba(30, 41, 59, 0.7); /* Полупрозрачные карточки */
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Крутой анимированный киберпанк/космос градиент */
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #311042, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    background-attachment: fixed;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Анимация плавного переливания фона */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+/* Стили для твоей картинки */
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Ограничиваем высоту, чтобы не была гигантской */
+    object-fit: contain; /* Теперь картинка не обрезается, а показывается целиком */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Стили кнопок */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px; /* Закругленные современные кнопки */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Градиенты для кнопок соцсетей */
+.btn-vk { background: linear-gradient(135deg, #0077FF, #005bb5); color: white; }
+.btn-ya { background: linear-gradient(135deg, #FFCC00, #e6b800); color: #000; }
+.btn-zvuk { background: linear-gradient(135deg, #2115e5, #1a11b8); color: white; }
+.btn-group { 
+    background: rgba(255,255,255,0.1); 
+    border: 1px solid rgba(255,255,255,0.2); 
+    color: #fff; 
+    backdrop-filter: blur(5px); 
+}
+.btn-group:hover { background: rgba(255,255,255,0.2); }
+
+main {
+    padding: 20px 0 60px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+/* Стили карточек (аккордеонов) */
+details {
+    background: rgba(15, 20, 35, 0.6); /* Полупрозрачные карточки, чтобы было видно анимацию */
+    border: 1px solid rgba(14, 165, 233, 0.2); /* Голубоватая рамка */
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px); /* Сильное размытие фона под карточкой */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+summary {
+    padding: 20px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    transition: transform 0.3s;
+    font-weight: 400;
+}
+
+details[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+details[open] summary {
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-content {
+    padding: 30px 25px;
+    animation: fadeIn 0.4s ease-in-out;
+    color: #cbd5e1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.accordion-content h3 {
+    color: #fff;
+    margin-top: 25px;
+    font-size: 1.3rem;
+}
+
+.accordion-content h3:first-child {
+    margin-top: 0;
+}
+
+.album-links {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.album-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.album-links a:hover {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+
+.vk-widget {
+    margin: 25px 0;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.story {
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+.story p {
+    margin-bottom: 15px;
+}
+
+.story strong {
+    color: #fff;
+}
+
+blockquote {
+    border-left: 4px solid var(--accent-color);
+    margin: 20px 0;
+    padding: 15px 20px;
+    font-style: italic;
+    background: rgba(14, 165, 233, 0.05);
+    border-radius: 0 8px 8px 0;
+    color: #e2e8f0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border-color);
+    color: #64748b;
+    margin-top: 60px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+}
