@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     /* Новая цветовая палитра: глубокий космический синий вместо черного */
     --bg-color: #0f172a;
     --text-color: #f8fafc;
@@ -251,4 +251,64 @@ footer {
     margin-top: 60px;
     background: rgba(0,0,0,0.3);
     backdrop-filter: blur(5px);
+}
+/* Стили для вкладок */
+.tabs-header {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+}
+
+.tabs-header .tab {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s ease;
+}
+
+.tabs-header .tab:hover {
+    color: rgba(255,255,255,0.8);
+}
+
+.tabs-header .tab.active {
+    color: #fff;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Стили для текстов песен */
+.lyrics-text {
+    white-space: pre-wrap;
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    background: rgba(15, 20, 35, 0.6);
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.song-accordion {
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.song-accordion summary {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    background: transparent;
+}
+
+.song-accordion[open] summary {
+    background: rgba(0,0,0,0.2);
 }
