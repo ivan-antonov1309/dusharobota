@@ -313,6 +313,21 @@ footer {
     background: rgba(0,0,0,0.2);
 }
 
+.lyrics-locked .lyrics-text {
+    display: none;
+}
+
+.lyrics-lock-note {
+    margin: 15px 0 0;
+    padding: 20px;
+    text-align: center;
+    color: #94a3b8;
+    font-style: italic;
+    background: rgba(15, 20, 35, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 /* Мобильная адаптивность для компактного отображения на телефонах */
 @media (max-width: 600px) {
     .container {
